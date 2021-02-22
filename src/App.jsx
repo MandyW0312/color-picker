@@ -33,6 +33,14 @@ export class App extends Component {
     })
   }
 
+  randomColor = event => {
+    this.setState({
+      hue: Math.floor(Math.random() * (360 - 0)) + 0,
+      saturation: Math.floor(Math.random() * (100 - 0)) + 0,
+      lightness: Math.floor(Math.random() * (100 - 0)) + 0,
+    })
+  }
+
   render() {
     return (
       <div>
