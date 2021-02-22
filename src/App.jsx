@@ -21,6 +21,12 @@ export class App extends Component {
     })
   }
 
+  updateSaturation = event => {
+    this.setState({
+      saturation: event.target.value,
+    })
+  }
+
   render() {
     return (
       <div>
