@@ -15,6 +15,12 @@ export class App extends Component {
     })
   }
 
+  updateHue = event => {
+    this.setState({
+      hue: event.target.value,
+    })
+  }
+
   render() {
     return (
       <div>
