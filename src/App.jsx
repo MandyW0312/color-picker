@@ -27,6 +27,12 @@ export class App extends Component {
     })
   }
 
+  updateLightness = event => {
+    this.setState({
+      lightness: event.target.value,
+    })
+  }
+
   render() {
     return (
       <div>
