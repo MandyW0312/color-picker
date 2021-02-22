@@ -5,6 +5,7 @@ export class App extends Component {
     hue: 0,
     saturation: 0,
     lightness: 0,
+    alpha: 0,
   }
 
   componentDidMount() {
@@ -12,6 +13,7 @@ export class App extends Component {
       hue: Math.floor(Math.random() * (360 - 0)) + 0,
       saturation: Math.floor(Math.random() * (100 - 0)) + 0,
       lightness: Math.floor(Math.random() * (100 - 0)) + 0,
+      alpha: Math.round((Math.random() * (1 - 0) + 0) * 100) / 100,
     })
   }
 
@@ -33,11 +35,18 @@ export class App extends Component {
     })
   }
 
+  updateAlpha = event => {
+    this.setState({
+      alpha: event.target.value,
+    })
+  }
+
   randomColor = event => {
     this.setState({
       hue: Math.floor(Math.random() * (360 - 0)) + 0,
       saturation: Math.floor(Math.random() * (100 - 0)) + 0,
       lightness: Math.floor(Math.random() * (100 - 0)) + 0,
+      alpha: Math.round((Math.random() * (1 - 0) + 0) * 100) / 100,
     })
   }
 
@@ -46,15 +55,15 @@ export class App extends Component {
       <div>
         <header
           style={{
-            backgroundColor: `hsl(${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%)`,
+            backgroundColor: `hsla(${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%, ${this.state.alpha})`,
           }}
         >
           <h1>Color Picker</h1>
         </header>
         <main>
           <h2>
-            This color is: hsl({this.state.hue}, {this.state.saturation}%,
-            {this.state.lightness}%)
+            This color is: hsla({this.state.hue}, {this.state.saturation}%,
+            {this.state.lightness}%, {this.state.alpha})
           </h2>
           <button onClick={this.randomColor}>Random Color</button>
           <section>
@@ -88,6 +97,18 @@ export class App extends Component {
               onInput={this.updateLightness}
               value={this.state.lightness}
               name="Lightness"
+            ></input>
+          </section>
+          <section>
+            <label htmlFor="Alpha">Alpha: </label>
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              onInput={this.updateAlpha}
+              value={this.state.alpha}
+              name="Alpha"
             ></input>
           </section>
         </main>
