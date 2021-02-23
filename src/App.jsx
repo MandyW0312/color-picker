@@ -67,7 +67,7 @@ export class App extends Component {
           <section className="image">
             <img
               src="https://wemakemoviesonweekendsdotcom.files.wordpress.com/2017/06/maxresdefault-1.jpg"
-              height="400"
+              height="375"
               width="800"
             />
           </section>
