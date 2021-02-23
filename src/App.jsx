@@ -57,15 +57,20 @@ export class App extends Component {
           style={{
             backgroundColor: `hsla(${this.state.hue}, ${this.state.saturation}%, ${this.state.lightness}%, ${this.state.alpha})`,
           }}
-        >
-          <h1>Color Picker</h1>
-        </header>
+        ></header>
         <main>
           <h2>
-            This color is: hsla({this.state.hue}, {this.state.saturation}%,
+            The color above is: hsla({this.state.hue}, {this.state.saturation}%,
             {this.state.lightness}%, {this.state.alpha})
           </h2>
           <button onClick={this.randomColor}>Random Color</button>
+          <section className="image">
+            <img
+              src="https://wemakemoviesonweekendsdotcom.files.wordpress.com/2017/06/maxresdefault-1.jpg"
+              height="400"
+              width="800"
+            />
+          </section>
           <section>
             <label htmlFor="Hue">Hue: </label>
             <input
