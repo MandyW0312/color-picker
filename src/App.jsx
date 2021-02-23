@@ -117,7 +117,9 @@ export class App extends Component {
             ></input>
           </section>
         </main>
-        <footer>This Color Picker App was created by Mandy Wade</footer>
+        <footer>
+          This App to help you Pick a Color was created by Mandy Wade
+        </footer>
       </div>
     )
   }
